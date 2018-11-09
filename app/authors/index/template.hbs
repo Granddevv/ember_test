@@ -1,0 +1,46 @@
+<div>
+  <div class="filter-container">
+      <div class="filter-input-container">
+          <strong>Filter Title: </strong>
+        {{input value=title enter="filteChange" }}
+      </div>
+      <div class="filter-option-container">
+          <strong>Filter Options: </strong>
+        {{#radio-button
+          value="name"
+          groupValue=filter
+          changed="filterToggled"}}
+            Name
+        {{/radio-button}}
+        {{#radio-button
+          value="address"
+          groupValue=filter
+          changed="filterToggled"}}
+            Address
+        {{/radio-button}}
+        {{#radio-button
+          value="phonenumber"
+          groupValue=filter
+          changed="filterToggled"}}
+            Phone Number
+        {{/radio-button}}
+      </div>
+
+  </div>
+
+  {{#each listObject as |item|}}
+      <div class="list-item-container">
+          <div class="list-item-title">
+            {{link-to item.name "authors.show" item class=item.id}}
+          </div>
+          <div class="list-item-content">
+              <div><span>Name: </span>{{item.name}}</div>
+              <div><span>Pic:</span>{{item.picture}}</div>
+          </div>
+          <div class="list-item-btn-container">
+              <button {{action "deleteItem" item.id}}>delete</button>
+          </div>
+      </div>
+  {{/each}}
+
+</div>
