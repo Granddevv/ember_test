@@ -1,0 +1,49 @@
+<div class="item-detail-container">
+    <div class="item-detail-header">
+        <h2 class="title">{{model.name}}</h2>
+        {{#link-to "authors"}}
+            <span>back</span>
+        {{/link-to}}
+    </div>
+    <div class="form-container">
+        <div class="input-container">
+            <strong>Name:</strong>
+          {{#if editFlag}}
+            {{model.name}}
+          {{else}}
+            {{input value=model.name}}
+          {{/if}}
+        </div>
+        <div class="input-container">
+            <strong>Picture:</strong>
+          {{#if editFlag}}
+            {{model.picture}}
+          {{else}}
+            {{input value=model.picture}}
+          {{/if}}
+        </div>
+        <div class="input-container">
+            <strong>Address:</strong>
+          {{#if editFlag}}
+            {{model.address}}
+          {{else}}
+            {{input value=model.address}}
+          {{/if}}
+        </div>
+        <div class="input-container">
+            <strong>Phone Number:</strong>
+          {{#if editFlag}}
+            {{model.phonenumber}}
+          {{else}}
+            {{input value=model.phonenumber}}
+          {{/if}}
+        </div>
+        <div class="btn-container">
+          {{#if editFlag}}
+              <button {{action "setVisible"}}>Edit</button>
+          {{else}}
+              <button {{action "setEdit" model.name model.picture model.id}}>Update</button>
+          {{/if}}
+        </div>
+    </div>
+</div>
