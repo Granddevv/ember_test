@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="menu">
+      {{#link-to "index"}}
+          <h1>
+              <em>Code Challenge</em>
+          </h1>
+      {{/link-to}}
+      {{#link-to "authors.add" class="btn_add" }}
+          <span>Add Item</span>
+      {{/link-to}}
+    </div>
+    <div class="body">
+
+      {{outlet}}
+    </div>
+
+</div>
