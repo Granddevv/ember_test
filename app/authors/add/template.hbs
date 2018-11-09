@@ -1,0 +1,31 @@
+<div class="add-item-container">
+    <div class="title-container">
+        <h2 class="title">Create Object</h2>
+        <div class="back-container">
+          {{#link-to "authors"}}
+              <span>back</span>
+          {{/link-to}}
+        </div>
+    </div>
+    <div class="form-container">
+        <div class="input-container">
+            <strong>Name:</strong>
+            {{input value=name}}
+        </div>
+        <div class="input-container">
+            <strong>Picture:</strong>
+            {{input value=picture }}
+        </div>
+        <div class="input-container">
+            <strong>Address:</strong>
+            {{input value=address}}
+        </div>
+        <div class="input-container">
+            <strong>Phone Number:</strong>
+            {{input value=phonenumber }}
+        </div>
+        <div class="btn-container">
+            <button {{action "addItem" name picture}}>Create</button>
+        </div>
+    </div>
+</div>
